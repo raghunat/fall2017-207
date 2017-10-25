@@ -1,0 +1,9 @@
+In your DB
+  -> Create a table called "Products"
+    ->Fields for this table are:
+      id: Primary key, auto increments
+      name: varchar(50)
+      price: float(7)
+      description: varchar(255)
+      tags: varchar(255) comma seperated word list ex: golf, club, taylormade
+  -> Make 10 Records

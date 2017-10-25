@@ -11,16 +11,9 @@ if (isset($_SESSION['userID']) == false) {
 <?php require "navbar.php" ?>
 
 <?php
-$connection = new mysqli(
-  "dogblog.caokxintrssz.us-east-1.rds.amazonaws.com",
-  "fredonia",
-  "Fall2017!!!",
-  "dogblog"
-);
+require "utilities.php";
 
-if ($connection->connect_error) {
-  die("Connect error:" . $connection->connect_error);
-}
+$connection = getConnection();
 
 $post = $connection->query("
   SELECT

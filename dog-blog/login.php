@@ -2,9 +2,28 @@
 require 'session.php';
 // If coming from the form POST:
 if (isset($_POST['username'])) {
-    if ($_POST['username'] == 'bob' && $_POST['password'] == 'builder') {
-        $_SESSION['userID'] = 12345;
-        header("Location: index.php");
+    // make a connection to the db
+    require "utilities.php";
+    // fine one user by the username
+    $connection = getConnection();
+
+    // hash the password in the superglobal
+    $password = md5($_POST['password']);
+
+    // check it against the one in the record
+    $result = $connection->query(
+      "SELECT * FROM users WHERE username = '$_POST[username]'"
+    );
+
+    $user = $result->fetch_assoc();
+
+    if (empty($user)) {
+      header('Location: login.php');
+    } else if ($password == $user['password']) {
+      $_SESSION['userID'] = $user['id'];
+      header('Location: index.php');
+    } else {
+      header('Location: login.php');
     }
 }
 ?>

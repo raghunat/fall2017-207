@@ -1,0 +1,19 @@
+<> == required
+[] == optional
+
+SELECT <columns> FROM <table> [WHERE <column> <operator> <value>...]
+EX: SELECT name FROM authors WHERE age > 21
+EX: SELECT name, dob FROM authors WHERE age > 21 AND city = 'Dunkirk'
+EX: SELECT * FROM authors WHERE username = 'mcbillybon'
+
+INSERT INTO <table> (<columns>) VALUES (<values>)
+EX: INSERT INTO authors (name, dob, city) VALUES ('bob', '1/1/01', 'Dunkirk')
+EX: INSERT INTO authors (name, age) VALUES ('jane', 34)
+
+UPDATE <table> SET <column=value,...> [WHERE <column> <operator> <value>...]
+EX: UPDATE authors SET adult=true WHERE age > 18
+EX: UPDATE authors SET password='abcdefg', name='hacked'           (<- Oh noes!)
+
+DELETE FROM <table> [WHERE <column> <operator> <value>...]
+EX: DELETE FROM authors WHERE last_activity < '10/23/2016'
+EX: DELETE FROM authors                                            (<- Oh noes!)

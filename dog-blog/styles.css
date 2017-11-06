@@ -1,3 +1,188 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300|Shadows+Into+Light');
+/* reset styles */
+body {
+  margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  padding-bottom: 50px;
+}
+
 .active-link {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+
+/* main-header styles */
+#main-header {
+  height: 350px;
+  background-image: url(http://basau.org/wp-content/uploads/2015/04/boarding-banner.jpg);
+  background-position: center;
+  background-size: cover;
+  line-height: 350px;
+  text-align: center;
+  box-shadow: 0 0 15px black;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+#main-header h1 {
+  font-size: 160px;
+  margin: 0;
+  color: white;
+  text-shadow: 0 0 10px black;
+}
+
+
+/* navbar styles */
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 2px;
+}
+
+#main-nav ul li {
+  display: block;
+  float: left;
+  width: 20%;
+  height: 55px;
+  text-align: center;
+  line-height: 55px;
+  background-color: #F8C58C;
+  transition: 0.7s;
+}
+
+#main-nav a {
+  color: #7B2A3B;
+  text-decoration: none;
+}
+
+#main-nav a:visited {
+  color: #7B2A3B;
+}
+
+#main-nav li:hover {
+  background-color: #F8E7A2;
+}
+
+/* index styles */
+#posts {
+  float: left;
+  width: 80%;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+#posts article {
+  box-shadow: 2px 2px 5px black;
+  box-sizing: border-box;
+  padding: 16px;
+  max-width: 840px;
+  margin: 24px auto;
+}
+
+#featured-dogs {
+  float: left;
+  width: 20%;
+  box-sizing: border-box;
+  padding: 16px;
+
+}
+
+#featured-dogs img {
+  width: 100%;
+}
+
+/* login.php */
+#login {
+  max-width: 400px;
+  margin: 80px auto;
+  height: 12em;
+  box-shadow: 2px 2px 5px black;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+#login label, #login input, #login button {
+  display: block;
+  float: left;
+  font-size: 2em;
+}
+
+#login label {
+  width: 30%;
+  text-align: right;
+  font-size: 2em;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+#login input {
+  width: 68%;
+}
+
+#login button {
+  width: 60%;
+  margin: 16px 20%;
+  background-color: #86DDB2;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 1px 1px 1px gray,
+    inset 4px 4px 10px rgb(217, 217, 217),
+    inset -1px -1px 10px rgb(217, 217, 217);
+}
+
+/* footer styles */
+
+a#new-post {
+  font-size: 3em;
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 8px;
+  bottom: 58px;
+  text-align: center;
+  line-height: 47px;
+  border-radius: 100px;
+  box-shadow: 1px 1px 4px black;
+
+  background: linear-gradient(270deg, #f9df76, #ea2f0b);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 8s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+a#new-post:visited {
+  color: white;
+}
+
+footer {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #7B2A3B;
+  color: white;
+  float: left;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }

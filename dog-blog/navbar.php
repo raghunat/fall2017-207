@@ -16,7 +16,7 @@ if (isset($_SESSION['userID'])) {
 
 ?>
 
-<nav>
+<nav id="main-nav">
     <ul>
         <li><a class="<?php echo ($page === 'index' ? 'active-link' : '') ?>" href="index.php">Home</a></li>
         <li><a class="<?php echo ($page === 'breeds' ? 'active-link' : '') ?>" href="breeds.php">Breeds</a></li>

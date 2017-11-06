@@ -34,7 +34,7 @@ while ($row = $result->fetch_assoc()) {
 
 <?php require "navbar.php" ?>
 
-<section>
+<section id="posts">
 
     <?php foreach ($posts as $post) { ?>
         <article>
@@ -46,7 +46,7 @@ while ($row = $result->fetch_assoc()) {
 </section>
 
 
-<aside>
+<aside id="featured-dogs">
 
     <?php foreach ($dogs as $dog) { ?>
         <div>

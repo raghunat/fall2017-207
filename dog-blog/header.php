@@ -7,6 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
+<header id="main-header">
     <h1>Dog Blog</h1>
 </header>

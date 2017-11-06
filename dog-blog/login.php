@@ -32,7 +32,7 @@ if (isset($_POST['username'])) {
 
 <?php require "navbar.php" ?>
 
-<form method="POST">
+<form method="POST" id="login">
     <label for="username">Username</label>
     <input type="text" id="username" name="username">
     <br>

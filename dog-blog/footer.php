@@ -6,7 +6,24 @@
 
 <?php } ?>
 
-<footer>Woof.com &copy; 2017</footer>
+<footer onclick="winMillionDollars()">Woof.com &copy; 2017</footer>
+
+<script>
+
+  function winMillionDollars() {
+    var message = "You have won a million doll hairs";
+
+    alert(message);
+  }
+
+  function changeTitleColor() {
+    document.querySelector('#main-header h1').style.color = 'red';
+    document.querySelector('#main-header h1').innerHTML = 'CAT BLOG MWAHAHAHA';
+  }
+
+
+</script>
+
 
 
 </body>

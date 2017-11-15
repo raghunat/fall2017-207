@@ -8,5 +8,5 @@
 </head>
 <body>
 <header id="main-header">
-    <h1>Dog Blog</h1>
+    <h1>Dog Bl<span onclick="changeTitleColor()">o</span>g</h1>
 </header>

@@ -7,6 +7,7 @@
 <?php } ?>
 
 <footer onclick="winMillionDollars()">Woof.com &copy; 2017</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
 
@@ -20,6 +21,44 @@
     document.querySelector('#main-header h1').style.color = 'red';
     document.querySelector('#main-header h1').innerHTML = 'CAT BLOG MWAHAHAHA';
   }
+
+
+  // We need to know when a new post happens
+  // get the latest post, and save a reference for it (latest post === last id value)
+  // Ask the website server, if there is a new post every 3 seconds
+    // "new post" === A post with a higher id value than the one we save a ref to
+  // If there is a new post, alert the user, and update the saved ref to the new post
+  // IF there isn't a new post, do nothing.
+
+  var latestPostId = undefined;
+
+  function getLatestPost() {
+    // make a GET call to the server
+    // get the latest post id
+    // compare it
+    // alert if new
+    // nothing if not
+    $.getJSON('latest-post.php') //$ is the jquery library
+      .done(function(post) {
+        if (latestPostId == undefined) {
+          latestPostId = post.id;
+        } else if(latestPostId < post.id) {
+          alert("There is a new post: " + post.title);
+          latestPostId = post.id;
+        } else {
+          // Do nothing.
+        }
+      })
+      .fail(function(err) {
+        console.error(err);
+      });
+  }
+
+  // Start asking the server for updates every 3000 milliseconds
+  setInterval(getLatestPost, 3000);
+
+
+
 
 
 </script>

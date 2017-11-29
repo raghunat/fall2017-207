@@ -186,3 +186,39 @@ footer {
   position: fixed;
   bottom: 0;
 }
+
+#notification {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+
+  height: 200px;
+  width: 400px;
+  box-sizing: border-box;
+  padding: 12px;
+
+  background-color: white;
+  box-shadow: 2px 2px 4px black;
+  display: none;
+}
+
+
+#all-users {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.user {
+  box-shadow: 2px 2px 4px black;
+  background-color: white;
+}
+.user img {
+  display: block;
+  max-width: 100%;
+}
+.user h2 {
+
+}
+.user h3 {
+
+}

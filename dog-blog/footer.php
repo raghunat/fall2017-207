@@ -7,6 +7,14 @@
 <?php } ?>
 
 <footer onclick="winMillionDollars()">Woof.com &copy; 2017</footer>
+
+<div id="notification">
+  <h5>Message</h5>
+  <p>Title</p>
+  <a href="#">Check it out &gt;&gt;</a>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
@@ -43,7 +51,15 @@
         if (latestPostId == undefined) {
           latestPostId = post.id;
         } else if(latestPostId < post.id) {
-          alert("There is a new post: " + post.title);
+          // populate the notification div with details
+          $('#notification p').html(post.title);
+          $('#notification a').attr('href', 'post.php?id=' + post.id);
+          // show the notification
+          $('#notification').fadeIn();
+          // hide it after 5 seconds
+          setTimeout(function() {
+            $('#notification').fadeOut();
+          }, 5000);
           latestPostId = post.id;
         } else {
           // Do nothing.

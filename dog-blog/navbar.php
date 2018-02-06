@@ -1,27 +1,23 @@
-<?php
-require 'session.php';
+<nav>
+  <ul>
 
-if (isset($page) === false) {
-    $page = '';
-}
+    <?php if ($page == 'Dog Blog') { ?>
+      <li class="active"><a href="index.php">Home</a></li>
+    <?php } else { ?>
+      <li class=""><a href="index.php">Home</a></li>
+    <?php } ?>
 
-if (isset($_SESSION['userID'])) {
-  $sessionPage = 'logout.php';
-  $sessionPageLink = 'Log Out';
-} else {
-  $sessionPage = 'login.php';
-  $sessionPageLink = 'Login';
-}
+    <?php if ($page == 'News') { ?>
+      <li class="active"><a href="news.php">News</a></li>
+    <?php } else {  ?>
+      <li><a class="" href="news.php">News</a></li>
+    <?php }  ?>
 
+    <?php if ($page == 'Dogs') { ?>
+      <li class="active"><a href="dogs.php">Dogs</a></li>
+    <?php } else {  ?>
+      <li><a class="" href="dogs.php">Dogs</a></li>
+    <?php }  ?>
 
-?>
-
-<nav id="main-nav">
-    <ul>
-        <li><a class="<?php echo ($page === 'index' ? 'active-link' : '') ?>" href="index.php">Home</a></li>
-        <li><a class="<?php echo ($page === 'breeds' ? 'active-link' : '') ?>" href="breeds.php">Breeds</a></li>
-        <li><a class="<?php echo ($page === 'news' ? 'active-link' : '') ?>" href="news.php">News</a></li>
-        <li><a class="<?php echo ($page === 'dogs' ? 'active-link' : '') ?>" href="dogs.php">Dogs</a></li>
-        <li><a href="<?php echo $sessionPage ?>"><?php echo $sessionPageLink ?></a></li>
-    </ul>
+  </ul>
 </nav>

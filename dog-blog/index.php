@@ -1,61 +1,23 @@
-<?php require "header.php" ?>
-<?php
+<?php $page = 'Dog Blog'; require('header.php') ?>
+<?php require('navbar.php') ?>
 
-$connection = new mysqli(
-  "dogblog.caokxintrssz.us-east-1.rds.amazonaws.com",
-  "fredonia",
-  "Fall2017!!!",
-  "dogblog"
-);
+<header>
+  <h1>Dog Blog</h1>
+</header>
 
-if ($connection->connect_error) {
-  die("Connection error: " . $connection->connect_error);
-}
-
-$result = $connection->query("SELECT * FROM posts");
-
-$posts = [];
-
-while ($row = $result->fetch_assoc()) {
-  $posts[] = $row;
-}
-
-$result = $connection->query("SELECT * FROM dogs");
-
-$dogs = [];
-
-while ($row = $result->fetch_assoc()) {
-  $dogs[] = $row;
-}
-
-?>
-
-<?php $page = 'index' ?>
-
-<?php require "navbar.php" ?>
-
-<section id="posts">
-
-    <?php foreach ($posts as $post) { ?>
-        <article>
-            <h2><a href="post.php?id=<?php echo $post['id'] ?>"><?php echo $post['title'] ?></a></h2>
-            <p><?php echo $post['content'] ?></p>
-        </article>
-    <?php } ?>
-
+<section id="main">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem mollitia aliquam id nihil a suscipit numquam ratione recusandae eligendi, repudiandae saepe est rerum quaerat fugiat blanditiis facilis ipsum dolorem voluptate! Beatae dolores est quisquam voluptate cupiditate odio eos illum harum doloremque eligendi nemo corporis aut esse hic, repellat excepturi. Sapiente eligendi pariatur deleniti, a quae tempora labore nobis sequi facere culpa, eaque repudiandae soluta sint veritatis similique error doloremque harum, esse accusantium voluptates repellat inventore molestias repellendus dignissimos, dolorum? Modi dolores, ut rerum magni facere deleniti, impedit maiores aliquid quas non nobis dolor qui optio iusto nesciunt, id amet ipsum?
 </section>
 
-
-<aside id="featured-dogs">
-
-    <?php foreach ($dogs as $dog) { ?>
-        <div>
-            <h3><?php echo $dog['name'] ?></h3>
-            <img src="<?php echo $dog['img'] ?>">
-            <p><?php echo $dog['toy'] ?></p>
-        </div>
-    <?php } ?>
-
+<aside>
+  <article>
+    <h2>Some Title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro tempore unde quibusdam consequatur dolorum deleniti, impedit ratione quae quaerat et distinctio, dolore nobis natus at temporibus illum nisi, nam qui.</p>
+  </article>
+  <article>
+    <h2>Some Title</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro tempore unde quibusdam consequatur dolorum deleniti, impedit ratione quae quaerat et distinctio, dolore nobis natus at temporibus illum nisi, nam qui.</p>
+  </article>
 </aside>
 
-<?php require "footer.php" ?>
+<?php require('footer.php') ?>

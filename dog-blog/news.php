@@ -1,7 +1,6 @@
-<?php require 'header.php'?>
+<?php $page = 'News'; require('header.php') ?>
+<?php require('navbar.php') ?>
 
-<?php $page = 'news' ?>
+<h1>Dog Blog News</h1>
 
-<?php require 'navbar.php'?>
-
-<?php require 'footer.php'?>
+<?php require('footer.php') ?>

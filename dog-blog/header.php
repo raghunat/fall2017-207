@@ -1,12 +1,14 @@
-<?php require 'session.php' ?>
+<?php
+if (isset($page) == false) {
+  $page = 'UNKNOWN';
+}
+
+ ?>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <title>Dog Blog</title>
+    <title><?php echo $page ?></title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<header id="main-header">
-    <h1>Dog Bl<span onclick="changeTitleColor()">o</span>g</h1>
-</header>
+  </head>
+  <body>

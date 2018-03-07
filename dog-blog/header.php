@@ -1,4 +1,9 @@
 <?php
+// Open the session
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
 if (isset($page) == false) {
   $page = 'UNKNOWN';
 }

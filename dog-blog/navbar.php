@@ -19,5 +19,10 @@
       <li><a class="" href="dogs.php">Dogs</a></li>
     <?php }  ?>
 
+    <?php if (isset($_SESSION['loggedIn'])) { ?>
+      <li class="right"><a href="logout.php">Logout</a></li>
+    <?php } else { ?>
+      <li class="right"><a href="login.php">Login</a></li>
+    <?php } ?>
   </ul>
 </nav>

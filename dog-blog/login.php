@@ -1,15 +1,21 @@
 <?php
 session_start();
 if (isset($_POST['email'])) {
-  if ($_POST['email'] == 'something' && $_POST['password'] == 'secret') {
+
+  require('db.php');
+
+  $user = checkUserLogin($_POST['email'], $_POST['password']);
+
+  if ($user) {
     $_SESSION['loggedIn'] = true;
+    $_SESSION['userId'] = $user['id'];
     header('Location: index.php');
   } else {
     echo "INVALID CREDS";
   }
 }
 
-$page = 'Dogs';
+$page = 'Login';
 require('header.php');
 
  ?>

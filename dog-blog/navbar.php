@@ -21,6 +21,7 @@
 
     <?php if (isset($_SESSION['loggedIn'])) { ?>
       <li class="right"><a href="logout.php">Logout</a></li>
+      <li class="right"><a href="profile.php">Profile</a></li>
     <?php } else { ?>
       <li class="right"><a href="login.php">Login</a></li>
     <?php } ?>

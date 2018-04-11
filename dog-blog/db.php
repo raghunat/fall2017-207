@@ -1,5 +1,30 @@
 <?php // db.php
 
+function createPost($params) {
+  runSafeQuery(
+    "INSERT INTO posts (title, content, author_id, dog_id, banner_pic) VALUES (?,?,?,?,?)",
+    [
+      "ssiis",
+      $params['title'],
+      $params['content'],
+      $params['author_id'],
+      $params['dog_id'],
+      $params['banner_pic']
+    ]
+  );
+}
+
+function getAllPosts() {
+  $rawResult = runSafeQuery(
+    "SELECT * FROM posts",
+    []
+  );
+
+  $result = getAllResults($rawResult);
+
+  return $result;
+}
+
 function deleteUserById($id) {
   runSafeQuery(
     "DELETE FROM users WHERE id = ?",
@@ -165,7 +190,9 @@ function runSafeQuery($query, $params) {
   // ex SELECT * FROM dogs WHERE id = ? AND name = ?
   // $statement->bind_param('is', 1, 'spot');
   // s = string, i = int, b = blob/binary
-  $statement->bind_param(...$params);
+  if (count($params) > 0) {
+    $statement->bind_param(...$params);
+  }
 
   if ($statement->error) {
     die('Bind failed: ' . $statement->error);

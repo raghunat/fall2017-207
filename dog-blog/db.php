@@ -1,5 +1,28 @@
 <?php // db.php
 
+function updatePost($params) {
+  runSafeQuery(
+    "UPDATE posts SET
+      title=?,
+      content=?,
+      author_id=?,
+      dog_id=?,
+      banner_pic=?
+    WHERE id=?
+    ",
+    [
+      'ssiisi',
+      $params['title'],
+      $params['content'],
+      $params['dog_id'],
+      $params['banner_pic'],
+      $params['author_id'],
+      $params['id']
+    ]
+  );
+}
+
+
 function createPost($params) {
   runSafeQuery(
     "INSERT INTO posts (title, content, author_id, dog_id, banner_pic) VALUES (?,?,?,?,?)",
@@ -30,6 +53,19 @@ function deleteUserById($id) {
     "DELETE FROM users WHERE id = ?",
     ['i', $id]
   );
+}
+
+function getPostById($id) {
+  $rawResult = runSafeQuery(
+    "SELECT * FROM posts WHERE id = ?",
+    ['i', $id]
+  );
+
+  $result = getAllResults($rawResult);
+
+  $post = reset($result);
+
+  return $post;
 }
 
 function getUserById($id) {

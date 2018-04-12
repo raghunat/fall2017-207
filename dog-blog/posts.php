@@ -30,7 +30,7 @@ $posts = getAllPosts();
         <td><?php echo $post['dog_id'] ?></td>
         <td>
           <a href="view-post.php?id=<?php echo $post['id'] ?>">VIEW</a>
-          <a href="create-post.php?action=update">UPDATE</a>
+          <a href="create-post.php?update=<?php echo $post['id'] ?>">UPDATE</a>
           <a href="delete-post.php?id=<?php echo $post['id'] ?>">DELETE</a>
         </td>
       </tr>

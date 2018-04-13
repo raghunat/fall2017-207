@@ -1,4 +1,11 @@
-<?php // db.php
+<?php // db.ph
+
+function deletePostById($id) {
+  runSafeQuery(
+    "DELETE FROM posts WHERE id = ?",
+    ['i', $id]
+  );
+}
 
 function updatePost($params) {
   runSafeQuery(

@@ -24,10 +24,10 @@ $dog = getDogById($post['dog_id']);
    <h2><?php echo $post['title'] ?></h2>
  </section>
 
- <img id="post-dog-image" src="<?php echo $dog['image'] ?>" alt="">
+ <img id="post-dog-image" src="<?php echo $post['image'] ?>" alt="">
 
  <section id="post-content">
-   <h3><?php echo $post['author_id'] ?></h3>
+   <h3><?php echo $post['email'] ?></h3>
    <div>
       <?php echo $post['content'] ?>
    </div>

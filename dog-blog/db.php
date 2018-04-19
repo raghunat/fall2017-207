@@ -64,7 +64,10 @@ function deleteUserById($id) {
 
 function getPostById($id) {
   $rawResult = runSafeQuery(
-    "SELECT * FROM posts WHERE id = ?",
+    "SELECT * FROM posts
+    LEFT JOIN dogs ON posts.dog_id = dogs.id
+    LEFT JOIN users on posts.author_id = users.id
+    WHERE posts.id = ?",
     ['i', $id]
   );
 
